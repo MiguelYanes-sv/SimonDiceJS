@@ -13,7 +13,7 @@ class Juego {
         this.inicializar = this.inicializar.bind(this)
         this.inicializar()
         this.generarSecuencia()
-        setTimeout(this.siguienteNivel(), 500);
+        setTimeout(this.siguienteNivel, 1000);
         
     }
 
@@ -32,9 +32,9 @@ class Juego {
 
     toggleBtnEmpezar(){
         if (btnEmpezar.classList.contains('hide')) {
-            btnEmpezar.classList.remove('hide')            
+          btnEmpezar.classList.remove('hide')            
         }else{
-            btnEmpezar.classList.add('hide')
+          btnEmpezar.classList.add('hide')
         }
     }
 
@@ -139,8 +139,8 @@ class Juego {
     perdioElJuego(){
         swal(nombre, 'Lo lamentamos, perdiste 😔', 'error')
         .then(() => {
-            this.inicializar()
             this.eliminarEventosClick()
+            this.inicializar()
         })
     }
 }
